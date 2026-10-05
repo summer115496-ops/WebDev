@@ -1,0 +1,78 @@
+/* Portfolio stylesheet adapted to the supplied Week 3 CSS approach. */
+:root {
+  --ink: #1d2430;
+  --paper: #fdfaf5;
+  --panel: #f3ede4;
+  --tea: #7a3e12;
+  --accent: #b23a0e;
+  --muted: #5c6773;
+  --line: #d6dce3;
+  --focus: #1c8a9c;
+  --plain: #c9d1da;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+.skiplink { position: absolute; top: -4rem; left: 1rem; padding: .75rem 1rem; background: var(--ink); color: #fff; border-radius: .5rem; z-index: 5; }
+.skiplink:focus { top: 1rem; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--tea); line-height: 1.2; }
+h1 { font-size: 2.5rem; margin-top: 0; }
+h2 { font-size: 1.75rem; margin-top: 0; }
+h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+p { color: var(--muted); max-width: 65ch; }
+a { color: var(--accent); }
+a:hover { color: var(--tea); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.wrapper, main { max-width: 68rem; margin: 0 auto; padding: 0 1rem; }
+main > section { padding: 2rem 0; }
+.site-header { background: var(--ink); color: var(--plain); }
+.site-header .wrapper, .site-footer .wrapper { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .6rem; padding-bottom: .6rem; }
+.logo { margin: 0; color: #fff; font: 700 1.5rem Georgia, "Times New Roman", serif; }
+nav ul { display: flex; flex-wrap: wrap; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+nav a { display: block; padding: .7rem; color: #fff; font-weight: 700; text-decoration: none; border-radius: .5rem; }
+nav a:hover, nav a:focus { background: #fff; color: var(--ink); }
+#intro { background: var(--panel); margin: 1.5rem 0; padding: 2rem 1.25rem; border-radius: .5rem; }
+.tagline { color: var(--accent); font-size: 1.1rem; font-style: italic; font-weight: 700; }
+.about-layout { display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 2rem; }
+.profile-image { width: 200px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 5px solid #fff; }
+.button { display: inline-block; background: var(--accent); color: #fff; border-radius: .5rem; padding: .6rem 1rem; text-decoration: none; font-weight: 700; }
+.button:hover { background: var(--tea); color: #fff; }
+.speaker-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.speaker, .project-card { padding: 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: .5rem; }
+.speaker { min-height: 150px; }
+.skill-icon { color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+.speaker h3 { margin-top: .4rem; }
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.role { margin: 0; color: var(--accent); font-size: .8rem; font-weight: 700; }
+.quote { font-style: italic; }
+form { max-width: 36rem; }
+label { display: block; margin: .6rem 0 .25rem; font-weight: 700; }
+input[type="text"], input[type="email"], textarea { width: 100%; min-height: 2.75rem; padding: .75rem 1rem; font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: .5rem; }
+textarea { resize: vertical; }
+button { width: 100%; min-height: 2.75rem; margin-top: .8rem; padding: .75rem 1.5rem; font: inherit; font-weight: 700; background: var(--accent); color: #fff; border: 0; border-radius: .5rem; cursor: pointer; }
+button:hover { background: var(--tea); }
+.form-note { font-size: .85rem; }
+.site-footer { margin-top: 2rem; padding: 1rem 0; background: var(--ink); color: var(--plain); }
+.site-footer p { margin: 0; color: var(--plain); }
+.site-footer a { color: #fff; }
+@media (max-width: 48em) {
+  .about-layout { grid-template-columns: 1fr; }
+  .profile-image { margin: 0 auto; }
+  .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 36em) {
+  .site-header .wrapper, .site-footer .wrapper { flex-direction: column; justify-content: center; text-align: center; }
+  nav ul { justify-content: center; }
+  nav a { padding: .5rem; }
+  h1 { font-size: 2.1rem; }
+  .speaker-grid, .project-grid { grid-template-columns: 1fr; }
+  #intro { margin: 1rem 0; padding: 1.5rem 1rem; }
+}
